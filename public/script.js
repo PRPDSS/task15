@@ -1,16 +1,12 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // Проверка аутентификации для профиля
     if (window.location.pathname.endsWith('profile.html')) {
         checkAuth();
     }
 
-    // Инициализация темы
     initTheme();
 
-    // Обработчики для форм
     setupForms();
 
-    // Обработчики для профиля
     setupProfile();
 });
 
@@ -50,7 +46,6 @@ function toggleTheme() {
 }
 
 function setupForms() {
-    // Переключение между вкладками
     const tabs = document.querySelectorAll('.tab');
     tabs.forEach(tab => {
         tab.addEventListener('click', function () {
@@ -66,7 +61,6 @@ function setupForms() {
         });
     });
 
-    // Обработка входа
     const loginBtn = document.getElementById('login-btn');
     if (loginBtn) {
         loginBtn.addEventListener('click', function () {
@@ -92,7 +86,6 @@ function setupForms() {
         });
     }
 
-    // Обработка регистрации
     const registerBtn = document.getElementById('register-btn');
     if (registerBtn) {
         registerBtn.addEventListener('click', function () {
@@ -122,7 +115,6 @@ function setupForms() {
 }
 
 function setupProfile() {
-    // Выход из системы
     const logoutBtn = document.getElementById('logout-btn');
     if (logoutBtn) {
         logoutBtn.addEventListener('click', function () {
@@ -135,7 +127,6 @@ function setupProfile() {
         });
     }
 
-    // Загрузка данных
     const refreshBtn = document.getElementById('refresh-data');
     if (refreshBtn) {
         refreshBtn.addEventListener('click', fetchData);
