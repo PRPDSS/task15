@@ -1,20 +1,42 @@
 <!DOCTYPE html>
-<html lang="ru" data-theme="light">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <title>Кэширование без Redis</title>
-    <link rel="stylesheet" href="/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login/Register</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
-<body>
-    <h1>Демонстрация кэширования</h1>
-    <div class="controls">
-        <button id="toggle-theme">Сменить тему</button>
-        <button id="refresh-data">Обновить данные</button>
+<body class="light-theme">
+    <div class="container">
+        <div class="tabs">
+            <button class="tab active" data-tab="login">Login</button>
+            <button class="tab" data-tab="register">Register</button>
+        </div>
+
+        <div id="login-form" class="form active">
+            <h2>Login</h2>
+            <input type="text" id="login-username" placeholder="Username" required>
+            <input type="password" id="login-password" placeholder="Password" required>
+            <button id="login-btn">Login</button>
+            <p id="login-error" class="error"></p>
+        </div>
+
+        <div id="register-form" class="form">
+            <h2>Register</h2>
+            <input type="text" id="register-username" placeholder="Username" required>
+            <input type="password" id="register-password" placeholder="Password" required>
+            <button id="register-btn">Register</button>
+            <p id="register-error" class="error"></p>
+        </div>
+
+        <div class="theme-switcher">
+            <button id="theme-toggle">Toggle Dark Mode</button>
+        </div>
     </div>
-    <div id="data-container"></div>
-    <script src="/script.js"></script>
+
+    <script src="script.js"></script>
 </body>
 
 </html>
